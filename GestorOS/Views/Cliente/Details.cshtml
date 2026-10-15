@@ -1,0 +1,57 @@
+﻿@using GestorOS.Helpers;
+@model Cliente
+@{
+    ViewData["Title"] = "Detalhes do Cliente";
+}
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card p-4">
+            <h5 class="mb-3"><i class="fa-solid fa-id-card me-2"></i>@Model.Nome</h5>
+            <p class="mb-1"><i class="fa-solid fa-envelope me-2 text-muted"></i>@(Model.Email ?? "Não informado")</p>
+            <p class="mb-1"><i class="fa-solid fa-phone me-2 text-muted"></i>@(Model.Telefone ?? "Não informado")</p>
+            <p class="mb-3"><i class="fa-solid fa-calendar me-2 text-muted"></i>Cliente desde @Model.DataCadastro.ToString("dd/MM/yyyy")</p>
+
+            <div class="d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary btn-sm">Editar</a>
+                <a asp-action="Index" class="btn btn-outline-secondary btn-sm">Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="card p-4">
+            <h6 class="mb-3">Ordens de serviço deste cliente</h6>
+            @if (!Model.Ordens.Any())
+            {
+                <p class="text-muted mb-0">Nenhuma ordem de serviço registrada para este cliente.</p>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th class="text-end">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var o in Model.Ordens.OrderByDescending(o => o.DataAbertura))
+                            {
+                                <tr>
+                                    <td><a asp-controller="OrdensServico" asp-action="Details" asp-route-id="@o.Id">@o.Descricao</a></td>
+                                    <td>@o.DataAbertura.ToString("dd/MM/yyyy")</td>
+                                    <td><span class="badge @o.Status.ParaClasseBagde()">@o.Status.ParaTexto()</span></td>
+                                    <td class="text-end">@o.Valor.ToString("C")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

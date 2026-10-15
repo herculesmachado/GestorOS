@@ -1,0 +1,21 @@
+﻿@model Cliente
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<div class="card p-4 mx-auto" style="max-width: 560px;">
+    <h4 class="text-danger mb-3"><i class="fa-solid fa-triangle-exclamation me-2"></i>Confirmar exclusão</h4>
+    <p>Tem certeza que deseja excluir o cliente abaixo?</p>
+
+    <ul class="list-unstyled bg-light rounded p-3 mb-4">
+        <li><strong>Nome:</strong> @Model.Nome</li>
+        <li><strong>E-mail:</strong> @(Model.Email ?? "-")</li>
+        <li><strong>Telefone:</strong> @(Model.Telefone ?? "-")</li>
+    </ul>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash me-1"></i>Sim, excluir</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+﻿@model Cliente
+@{
+    ViewData["Title"] = "Novo Cliente";
+}
+
+<div class="card p-4 mx-auto" style="max-width: 620px;">
+    <h4 class="mb-4"><i class="fa-solid fa-user-plus me-2"></i>Novo Cliente</h4>
+
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="Nome" class="form-label"></label>
+            <input asp-for="Nome" class="form-control" placeholder="Nome completo" />
+            <span asp-validation-for="Nome" class="text-danger small"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" placeholder="email@exemplo.com" />
+            <span asp-validation-for="Email" class="text-danger small"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="Telefone" class="form-label"></label>
+            <input asp-for="Telefone" class="form-control" placeholder="(00) 00000-0000" />
+            <span asp-validation-for="Telefone" class="text-danger small"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check me-1"></i>Salvar</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

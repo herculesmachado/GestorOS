@@ -1,0 +1,110 @@
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3c34b8;
+    --primary-light: #eef0fd;
+    --bg: #f4f5fb;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #2b2d3a;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 0.9rem;
+    box-shadow: 0 2px 12px rgba(20, 20, 50, 0.06);
+}
+
+.card-dashboard {
+    transition: transform .15s ease, box-shadow .15s ease;
+    border-left: 4px solid var(--primary);
+}
+
+    .card-dashboard:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(20, 20, 50, 0.09);
+    }
+
+/* Botões */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+    .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+    }
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+    .btn-outline-primary:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+
+/* Tabelas */
+.table thead {
+    background-color: var(--primary-light);
+}
+
+.table > :not(caption) > * > * {
+    vertical-align: middle;
+}
+
+/* Badges de status */
+.badge-aberta {
+    background-color: #6c757d;
+}
+
+.badge-andamento {
+    background-color: #0d6efd;
+}
+
+.badge-concluida {
+    background-color: #198754;
+}
+
+.badge-cancelada {
+    background-color: #dc3545;
+}
+
+/* Cartão de resumo/valor total */
+.resumo-valor {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    border-radius: 0.9rem;
+}
+
+/* Formulários */
+.form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Impressão */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
