@@ -60,5 +60,39 @@ namespace GestorOS.Controllers
             return View(categoriaServicos);
             
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var categoriaServico = await _context.CategoriasServicos.FirstOrDefaultAsync(cs => cs.Id == id);
+            return View(categoriaServico);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var categoriaServico = await _context.CategoriasServicos
+                .Include(cs => cs.Ordens)
+                .FirstOrDefaultAsync(cs => cs.Id == id);
+
+            if (categoriaServico != null)
+            {
+                if (categoriaServico.Ordens.Count > 0)
+                {
+                    TempData["Erro"] = "Não é possível excluir uma categoria que possui ordens de serviço associadas.";
+                    return RedirectToAction(nameof(Index));
+                }
+
+                _context.Remove(categoriaServico);
+                await _context.SaveChangesAsync();
+                TempData["Sucesso"] = "categoria excluída com sucesso!";
+            }
+
+            return RedirectToAction(nameof(Index));
+
+        }
+
+
+
     }
 }

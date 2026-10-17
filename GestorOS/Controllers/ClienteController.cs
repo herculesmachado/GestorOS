@@ -107,7 +107,9 @@ namespace GestorOS.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
 
-            var cliente = await _context.Clientes.Include(c => c.Ordens).FirstOrDefaultAsync(c => c.Id == id);
+            var cliente = await _context.Clientes
+                .Include(c => c.Ordens)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (cliente != null)
             {
