@@ -1,9 +1,7 @@
 ﻿using GestorOS.Data;
 using GestorOS.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace GestorOS.Controllers
 {
