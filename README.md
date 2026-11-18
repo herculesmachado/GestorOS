@@ -169,7 +169,3 @@ Este projeto está sendo usado para praticar:
 ## 👨‍💻 Autor
 
 **Hércules de Jesus Machado Lima**
-
-- Instagram: [@hercules.codes](https://instagram.com/hercules.codes)
-- LinkedIn: [COLE_SEU_LINK](https://linkedin.com/in/SEU_PERFIL)
-- GitHub: [SEU_USUARIO](https://github.com/SEU_USUARIO)
