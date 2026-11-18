@@ -12,7 +12,7 @@ Aplicação web para gerenciamento de clientes, categorias e ordens de serviço,
 
 ## 🎥 Demonstração
 
-📹 **Vídeo mostrando as funcionalidades:** [Assistir ao vídeo]([COLE_AQUI_O_LINK_DO_VIDEO](https://drive.google.com/file/d/1KRFeFc_tNIPcad0CaLMSn-UDizShXHBw/view?usp=drive_link))
+📹 **Vídeo mostrando as funcionalidades:** [Assistir ao vídeo](https://drive.google.com/file/d/1KRFeFc_tNIPcad0CaLMSn-UDizShXHBw/view?usp=drive_link)
 
 ---
 
