@@ -12,7 +12,7 @@ Aplicação web para gerenciamento de clientes, categorias e ordens de serviço,
 
 ## 🎥 Demonstração
 
-📹 **Vídeo mostrando as funcionalidades:** [Assistir ao vídeo](COLE_AQUI_O_LINK_DO_VIDEO)
+📹 **Vídeo mostrando as funcionalidades:** [Assistir ao vídeo]([COLE_AQUI_O_LINK_DO_VIDEO](https://drive.google.com/file/d/1KRFeFc_tNIPcad0CaLMSn-UDizShXHBw/view?usp=drive_link))
 
 ---
 
@@ -22,6 +22,7 @@ Aplicação web para gerenciamento de clientes, categorias e ordens de serviço,
 |:---:|:---:|
 <img width="1920" height="644" alt="image" src="https://github.com/user-attachments/assets/750ecb6f-8fdc-4213-baf8-2eec6e65e8cf" />
 <img width="1920" height="715" alt="image" src="https://github.com/user-attachments/assets/b57bfa89-31f7-4a6c-ac79-cb02b9faacdc" />
+
 
 
 
